@@ -32,7 +32,7 @@ jobs:
         - echo "Deploying $RELEASE_TAG to Cloud Foundry"
       deploy:
         provider: cloudfoundry
-        api: run.pivotal.io
+        api: api.run.pivotal.io
         username: $CF_USERNAME
         password: $CF_PASSWORD
         organization: BTSTestOrg
