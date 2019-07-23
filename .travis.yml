@@ -27,13 +27,13 @@ jobs:
       language: bash
       script:
         - echo "Downloading $RELEASE_TAG"
-        - wget -P build/libs https://github.com/$GITHUB_USERNAME/pal-tracker/releases/download/$RELEASE_TAG/pal-tracker.jar
+        - wget -P build/libs https://github.com/nishantFiserv/pal-tracker/releases/download/$RELEASE_TAG/pal-tracker.jar
       before_deploy:
         - echo "Deploying $RELEASE_TAG to Cloud Foundry"
       deploy:
         provider: cloudfoundry
-        api: $CF_API_URL
+        api: run.pivotal.io
         username: $CF_USERNAME
         password: $CF_PASSWORD
-        organization: $CF_ORG
-        space: $CF_SPACE
+        organization: BTSTestOrg
+        space: development
